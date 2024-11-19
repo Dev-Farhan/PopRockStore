@@ -153,6 +153,7 @@ function App() {
               </button>
             </div>
           </div>
+
           <div className="lg:block md:block py-8">
             <CarouselDefault isMenuOpen={isMenuOpen} />
           </div>
