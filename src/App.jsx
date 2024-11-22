@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import Logo from "./assets/logo.png";
 import { CarouselDefault } from "./components/Carousel";
 import Card from "./components/Card";
+import CrystalImage from "./assets/red-crystal.jpg";
+import AboutBg from "./assets/image.png";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -176,11 +178,40 @@ function App() {
       </div>
 
       {/* Products Section */}
+
       <Element name="products">
-        <section className="my-20 flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-poppins font-medium mb-8">
-            All Products
-          </h1>
+        <section className="mt-20 flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center gap-1 mb-3">
+            <h1 className="text-4xl font-poppins font-medium mb-4">
+              All Products
+            </h1>
+            <div className="w-16 h-0.5 bg-gray-300 mb-5"></div>
+          </div>
+
+          <div className="flex flex-col lg:flex lg:items-start lg:justify-between md:flex md:items-start md:justify-between  justify-between items-center gap-4">
+            {/* Filter Section */}
+            <div className="flex items-center gap-2 font-poppins text-sm">
+              <span className="text-gray-600 ">Filter:</span>
+              <select className="rounded-md px-2 py-1 text-black-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <option value="allProducts">All Products</option>
+                <option value="crystal">Crystal</option>
+                <option value="stone">Stone</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+
+            {/* Sort Section */}
+            <div className="flex items-center gap-2 font-poppins text-sm mb-4">
+              <span className="text-gray-600">Sort:</span>
+              <select className="rounded-md px-2 py-1 text-black-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <option value="bestSelling">Best Selling</option>
+                <option value="priceLowToHigh">Price: Low to High</option>
+                <option value="priceHighToLow">Price: High to Low</option>
+                <option value="newest">Newest</option>
+              </select>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Assuming Card renders individual product details */}
             <Card />
@@ -195,6 +226,192 @@ function App() {
           <button className="border my-12 px-6 py-2 rounded-2xl text-hsla196 hover:text-white hover:bg-hsla196 transition duration-300">
             View All
           </button>
+        </section>
+      </Element>
+
+      {/* About Us */}
+      {/* 
+      <Element name="about">
+        <section
+          className="max-w-full h-screen my-20 flex flex-col items-center justify-center bg-gradient-to-tr from-sky-300 to-blue-600"
+          style={{ backgroundImage: `url(${AboutBg})` }}
+        >
+          <div className="w-full flex flex-col-reverse lg:flex items-center justify-center gap-1">
+            <div className="flex flex-col font-poppins">
+              <h1 className="text-4xl font-light">Best Price</h1>
+              <h1 className="text-5xl font-semibold">Agate Phone Grip</h1>
+              <span className="flex item-center gap-3">
+                <del className="text-[#41A0B7] mt-3">44.50$</del>
+                <ins className="text-5xl font-semibold text-red-600">
+                  19.50$
+                </ins>
+              </span>
+              <p className="text-wrap">
+                These Pop Rock Crystal grip tops can be swapped with other tops
+                depending on your mood, outfit, nails, phone case, holiday,
+                etc.! Just gently squeeze the sides to remove and swap out with
+                another color or design!
+              </p>
+              <button className="border my-12 px-6 py-2 rounded-2xl text-hsla196 hover:text-white hover:bg-hsla196 transition duration-300">
+                View All
+              </button>
+            </div>
+          </div>
+        </section>
+      </Element> */}
+
+      <Element name="about">
+        <section className="max-w-full h-screen flex items-center justify-center bg-gradient-to-tr from-sky-300 to-blue-600 relative overflow-hidden">
+          {/* SVG Background Wave */}
+          <svg
+            className="absolute bottom-0 left-0 w-full h-auto"
+            width="1440"
+            height="900"
+            viewBox="0 0 1440 900"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M780.5 719.289C996.132 691.392 1205.06 380.14 1440 254.604V-6.10352e-05H0V900C0 900 124.358 896.153 250 817.997C395.056 727.764 564.868 747.186 780.5 719.289Z"
+              fill="white"
+            />
+          </svg>
+
+          {/* Content */}
+          <div className="w-full max-w-6xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12 px-6 z-10">
+            {/* Text Section */}
+            <div className="w-[542px] flex flex-col font-poppins text-end lg:text-end lg:items-end">
+              <h1 className="text-3xl lg:text-4xl font-light text-gray-800">
+                BEST PRICE
+              </h1>
+              <h1 className="text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+                Agate Phone Grip
+              </h1>
+              <div className="flex items-center justify-end gap-3 mb-4">
+                <del className="text-[#41A0B7] text-xl">44.50$</del>
+                <ins className="text-4xl font-bold text-red-600">19.50$</ins>
+              </div>
+              <p className="text-[#31546D] text-xs  leading-relaxed max-w-sm lg:max-w-sm ml-auto">
+                These Pop Rock Crystal grip tops can be swapped with other tops
+                depending on your mood, outfit, nails, phone case, holiday,
+                etc.! Just gently squeeze the sides to remove and swap out with
+                another color or design!
+              </p>
+              <button className="text-sm border border-hsla196 text-white bg-hsla196 hover:text-hsla196 hover:bg-white transition duration-300 px-6 py-2 rounded-2xl mt-5">
+                View All
+              </button>
+            </div>
+
+            {/* Image Section */}
+            <div className="relative flex items-center justify-center">
+              {/* Outer Circle */}
+              <svg
+                width="670"
+                height="670"
+                viewBox="0 0 670 670"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute"
+              >
+                <g filter="url(#filter0_d_1_147)">
+                  <circle cx="335" cy="331" r="285" fill="white" />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_d_1_147"
+                    x="0"
+                    y="0"
+                    width="670"
+                    height="670"
+                    filterUnits="userSpaceOnUse"
+                    colorInterpolationFilters="sRGB"
+                  >
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="25" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0.472135 0 0 0 0 0.561969 0 0 0 0 0.6125 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_1_147"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_1_147"
+                      result="shape"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+
+              {/* Inner Circle */}
+              <svg
+                width="464"
+                height="464"
+                viewBox="0 0 464 464"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute"
+              >
+                <g filter="url(#filter0_d_1_148)">
+                  <circle cx="232" cy="228" r="182" fill="white" />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_d_1_148"
+                    x="0"
+                    y="0"
+                    width="464"
+                    height="464"
+                    filterUnits="userSpaceOnUse"
+                    colorInterpolationFilters="sRGB"
+                  >
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                      result="hardAlpha"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="25" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0.472135 0 0 0 0 0.561969 0 0 0 0 0.6125 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow_1_148"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow_1_148"
+                      result="shape"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+
+              {/* Image */}
+              <img
+                src={CrystalImage}
+                alt="Agate Phone Grip"
+                className="w-48 h-48 object-contain relative z-10"
+              />
+            </div>
+          </div>
         </section>
       </Element>
     </div>
