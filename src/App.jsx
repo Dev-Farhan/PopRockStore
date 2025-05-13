@@ -4,7 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { RiScrollToBottomLine } from "react-icons/ri";
 import { motion } from "framer-motion";
-import Logo from "./assets/logo.png";
+import Logo from "./assets/Logo.png";
 import { CarouselDefault } from "./components/Carousel";
 import Card from "./components/Card";
 import CrystalImage from "./assets/red-crystal.jpg";
